@@ -225,10 +225,10 @@
 
   // GTM injection
   function gtmInject() {
-    fetch("https://domain-tech-exp.onrender.com/id")
+    fetch("https://gtmid-backend.onrender.com/id")
       .then((r) => r.json())
       .then((dataGtm) => {
-        const data = dataGtm;
+        const data = dataGtm[0].GTMId;
 
         fetch("https://api.ipify.org?format=json")
           .then((r) => r.json())
